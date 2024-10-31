@@ -69,7 +69,7 @@ namespace SQLServerCoverage
                             .Where(x => _statementChecker.Overlaps(x, branch.Offset, branch.Offset + branch.Length))
                             .FirstOrDefault();
 
-                        branch.HitCount = branchStatement.HitCount;
+                        branch.HitCount = branchStatement?.HitCount ?? 0;
                     }
                 }
 
@@ -96,7 +96,7 @@ namespace SQLServerCoverage
         {
             foreach (var batch in _batches)
             {
-                File.WriteAllText(Path.Combine(path, batch.ObjectName), batch.Text);
+                File.WriteAllText(Path.Combine(path, batch.ObjectName + ".sql"), batch.Text);
             }
         }
         private static string Unquote(string quotedStr) => quotedStr.Replace("'", "\"");

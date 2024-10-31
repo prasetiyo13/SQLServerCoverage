@@ -167,7 +167,7 @@ namespace SQLServerCoverage.Serializers
             => new XElement(
                 FileElementName,
                 new XAttribute(uidAttributeName, uid),
-                new XAttribute(fullPathAttributeName, fullPath)
+                new XAttribute(fullPathAttributeName, fullPath + ".sql")
             );
 
         private XElement CreateClassesElement(IEnumerable<Batch> batches)

@@ -13,9 +13,9 @@ namespace SQLServerCoverage.Core
     {
 
         // Default path of result storage
-        public const string DefaultLocation = "SQL Server Coverage Report";
+        public const string DefaultLocation = "Coverage";
         // Default path of result storage
-        public const string DefaultCoverageFileName = "SQLServerCoverage";
+        public const string DefaultCoverageFileName = "Coverage";
 
         public class Options
         {
@@ -174,7 +174,7 @@ namespace SQLServerCoverage.Core
                                    }
                                    else
                                    {
-                                       outputPath = DefaultLocation + Path.DirectorySeparatorChar + DateTime.Now.ToString("yyyyMMdd_HHmmss") + Path.DirectorySeparatorChar;
+                                       outputPath = DefaultLocation + Path.DirectorySeparatorChar;
                                        if (!Directory.Exists(outputPath))
                                        {
                                            Directory.CreateDirectory(outputPath);
